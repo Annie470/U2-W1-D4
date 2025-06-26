@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Delius&display=swap");
 body {
   min-width: 1220px;
   height: 100vh;
@@ -6,8 +7,19 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  font-family: cursive;
+  font-family: "Delius", cursive;
 }
+@keyframes op {
+  0% {
+    transform: scale(3);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
 @keyframes fly1 {
   0% {
     transform: translateY(-100%) rotateX(45deg) rotateZ(-5deg);
@@ -52,8 +64,23 @@ body {
     opacity: 1;
   }
 }
+div img {
+  width: 20%;
+  transform: rotate(-5deg);
+  position: absolute;
+  top: -12%;
+  left: 35%;
+  animation: op 1.5s cubic-bezier(0.4, 0, 0.8, 1);
+}
+.op {
+  transform: rotate(25deg);
+}
+div:hover img {
+  display: none;
+}
 
 div {
+  position: relative;
   width: 20%;
   height: 30%;
   margin: 2em;
@@ -63,25 +90,28 @@ div {
   align-items: center;
   justify-content: center;
   transition: all 0.25s linear 0s;
+  border-radius: 2px;
 }
 h2 {
-  font-size: 3.5rem;
-  font-weight: 800;
+  font-size: 2rem;
+  font-weight: 700;
   margin-bottom: 0.5em;
+  color: #3c3c3c;
 }
 p {
-  font-size: 3rem;
+  color: #343434;
+  font-size: 1.5rem;
 }
 
 .green {
   background: #c7f6c9;
   background: linear-gradient(
     180deg,
-    rgba(199, 246, 201, 1) 0%,
+    rgb(210, 255, 212) 0%,
     rgba(0, 0, 0, 1) 180%
   );
   transform: rotate(5deg);
-  animation: fly1 2.2s linear 0s;
+  animation: fly1 2s linear 0s;
 }
 .purple {
   background-color: #c5c5f0;
@@ -91,7 +121,7 @@ p {
     rgba(0, 0, 0, 1) 180%
   );
   transform: rotate(-5deg);
-  animation: fly2 2.5s linear 0s;
+  animation: fly2 1.8s linear 0s;
 }
 .yellow {
   background-color: #f7f7c5;
@@ -101,11 +131,11 @@ p {
     rgba(0, 0, 0, 1) 180%
   );
   transform: rotate(-5deg);
-  animation: fly2 2.4s linear 0s;
+  animation: fly2 2.3s linear 0s;
 }
 
 div:hover {
   transform: scale(1.2) rotate(0deg);
-  box-shadow: 5px 5px 10px 4px #000000;
+  box-shadow: 5px 5px 10px 4px #00000087;
   z-index: 2;
 }
