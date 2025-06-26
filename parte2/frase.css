@@ -8,3 +8,55 @@
 7 ritardare progressivamente l'animazione delle altre 2 parole 
 */
 
+main {
+  width: 99vw;
+  height: 99vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-weight: 500;
+  text-shadow: 1px 1px 4px #000000;
+}
+#testoAlternato {
+  border: 10px solid gray;
+  font-size: 2rem;
+  width: 50%;
+  padding: 1em;
+  padding-top: 1em;
+}
+.parole i {
+  color: gray;
+  opacity: 0;
+  position: absolute;
+  animation: i 4s linear 0s forwards;
+  margin-left: 10px;
+}
+
+.parole i:nth-child(1) {
+  animation-delay: 0s;
+}
+.parole i:nth-child(2) {
+  animation-delay: 4s;
+}
+.parole i:nth-child(3) {
+  animation-delay: 8s;
+}
+@keyframes i {
+  0% {
+    transform: translateY(-40vh);
+    opacity: 0;
+  }
+  25% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  75% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(40vh);
+    opacity: 0;
+  }
+}
